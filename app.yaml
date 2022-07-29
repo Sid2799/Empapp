@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-Emp-App-deployment
+  name: appdeployment
 spec:
   selector:
     matchLabels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: EmpApp
-          image: Empapp-0.0.1-SNAPSHOT:1.0
+          image: sid2703/empapprepository:tag
           ports:
             - containerPort: 8080
         
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: Emp-App-svc
+  name: Appsvc
 spec:
   selector:
     app: EmpApp
