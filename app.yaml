@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: EmpApp
-          image: sid2703/empapprepository:tag
+          image: sid2703/empapprepository:1
           ports:
             - containerPort: 8080
         
