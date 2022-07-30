@@ -1,19 +1,19 @@
-apiVersion: apps/v6
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: appdeployment
+  name: empsyappdeployment
 spec:
   selector:
     matchLabels:
-      app: EmpApp
+      app: empsyapp
   replicas: 3
   template:
     metadata:
       labels:
-        app: EmpApp
+        app: empsyapp
     spec:
       containers:
-        - name: EmpApp
+        - name: empsyapp
           image: sid2703/empapprepository:1
           ports:
             - containerPort: 8080
@@ -24,12 +24,13 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: Appsvc
+  name: empsyappservice
 spec:
   selector:
-    app: EmpApp
+    app: empsyapp
   ports:
     - protocol: "TCP"
       port: 8080 
       targetPort: 8080 # The port exposed by the service
   type: LoadBalancer # type of the service.
+
